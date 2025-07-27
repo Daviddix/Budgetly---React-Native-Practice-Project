@@ -1,16 +1,39 @@
-import { Stack } from "expo-router";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { useFonts } from "expo-font"
+import { Stack } from 'expo-router'
+import * as SplashScreen from 'expo-splash-screen'
+import React, { useEffect } from 'react'
 
-export default function RootLayout() {
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
+
+const RootLayout = () => {
+  const [loaded, error] = useFonts({
+    "Satoshi-Regular": require("../assets/fonts/Satoshi-Regular.otf"),
+    "Satoshi-Bold": require("../assets/fonts/Satoshi-Bold.otf"),
+    "Satoshi-Medium": require("../assets/fonts/Satoshi-Medium.otf"),
+    "Satoshi-Light": require("../assets/fonts/Satoshi-Light.otf"),
+  })
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
+
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{flex : 1}}>
-        <Stack screenOptions={{
-          headerShown : false
-        }}>
-          <Stack.Screen name="(tabs)" />
-        </Stack>
-      </SafeAreaView>
-    </SafeAreaProvider>
-  );
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="onboarding" />
+      <Stack.Screen name="Home" />
+    </Stack>
+  )
 }
+
+export default RootLayout
