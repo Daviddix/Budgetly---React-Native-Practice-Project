@@ -31,7 +31,7 @@ const onboarding = () => {
             </Text>
           </View>
 
-        <Link href={"/Home"} asChild>
+        <Link href={"/Info"} asChild>
           <TouchableOpacity style={onboardingStyles.buttonStyle}>
             <Text style={onboardingStyles.buttonText}>Let&apos;s Go</Text>
           </TouchableOpacity>
@@ -44,7 +44,7 @@ const onboarding = () => {
 
 export default onboarding
 
-const onboardingStyles = StyleSheet.create({
+export const onboardingStyles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     justifyContent: 'center',

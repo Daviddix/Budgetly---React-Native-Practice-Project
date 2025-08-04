@@ -31,7 +31,7 @@ const RootLayout = () => {
       }}
     >
       <Stack.Screen name="onboarding" />
-      <Stack.Screen name="Home" />
+      <Stack.Screen name="Info" />
     </Stack>
   )
 }
