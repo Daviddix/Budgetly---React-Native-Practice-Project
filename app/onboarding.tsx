@@ -52,11 +52,9 @@ export const onboardingStyles = StyleSheet.create({
   },
   area: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-between',
     paddingVertical: 20,
-    maxWidth: "90%",
-    margin: "auto"
+    paddingHorizontal : 20,
+    backgroundColor : "#fafafa"
   },
   mascotContainer: {
     flex: 1,

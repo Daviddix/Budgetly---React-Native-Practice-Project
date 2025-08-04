@@ -41,7 +41,8 @@ const emptyListStyles = StyleSheet.create({
         fontSize : 20,
         fontFamily : "Satoshi-Medium",
         opacity : .6,
-        textAlign : "center"
+        textAlign : "center",
+        letterSpacing : -.5
     },
 
     addButton : {

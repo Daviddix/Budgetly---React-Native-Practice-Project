@@ -12,7 +12,9 @@ export const infoStyles = StyleSheet.create({
     },
     area: {
     paddingVertical: 20,
-    paddingHorizontal : 20
+    paddingHorizontal : 20,
+    backgroundColor : "#fafafa",
+    height: '100%',
   },
   topTextViewStyles : {
     marginBottom: 20
