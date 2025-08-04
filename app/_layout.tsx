@@ -32,6 +32,7 @@ const RootLayout = () => {
     >
       <Stack.Screen name="onboarding" />
       <Stack.Screen name="Info" />
+      <Stack.Screen name="home" />
     </Stack>
   )
 }

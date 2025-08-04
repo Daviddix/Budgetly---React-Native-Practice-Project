@@ -1,5 +1,5 @@
-import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { Link } from 'expo-router'
 //@ts-ignore
@@ -7,6 +7,7 @@ import SmallLogo from "../assets/info-logo.svg"
 import { infoStyles } from './styles'
 
 const Home = () => {
+  const [name, setName] = useState("")
   return (
     <SafeAreaProvider>
         <SafeAreaView style={infoStyles.area}>
@@ -18,14 +19,22 @@ const Home = () => {
 
         <View>
           <Text style={infoStyles.inputLabelStyle}>Username</Text>
-          <TextInput style={infoStyles.textInputStyles} placeholder='Type your username here' />
+          <TextInput
+          value={name}
+          onChangeText={(text)=> setName(text)} 
+          style={infoStyles.textInputStyles} 
+          placeholder='Type your username here' />
         </View>
 
-        <Link href={"/Info"} asChild>
+        <Link 
+        disabled={name.length === 0} 
+        href={"/home"} 
+        asChild> 
           <TouchableOpacity style={infoStyles.buttonStyle}>
             <Text style={infoStyles.buttonTextStyle}>Let&apos;s Go</Text>
           </TouchableOpacity>
         </Link>
+
         </SafeAreaView>
     </SafeAreaProvider>
   )
