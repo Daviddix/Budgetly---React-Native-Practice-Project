@@ -2,6 +2,7 @@ import { useFonts } from "expo-font"
 import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useEffect } from 'react'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -25,15 +26,17 @@ const RootLayout = () => {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
+    <GestureHandlerRootView>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
       <Stack.Screen name="onboarding" />
       <Stack.Screen name="Info" />
       <Stack.Screen name="home" />
     </Stack>
+    </GestureHandlerRootView>
   )
 }
 

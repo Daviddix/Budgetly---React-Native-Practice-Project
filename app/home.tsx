@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useRef } from 'react'
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
 //@ts-ignore
 import EmptyList from '@/components/EmptyList'
@@ -6,8 +6,16 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 //@ts-ignore
 import testImage from "../assets/t.jpg"
 import { infoStyles } from './styles'
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+
 
 const Home = () => {
+    const bottomSheetRef = useRef<BottomSheet>(null);
+
+  // callbacks
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
   return (
     <SafeAreaProvider>
         <SafeAreaView style={infoStyles.area}>
@@ -43,15 +51,40 @@ const Home = () => {
       </View>
             </View>
 
+            
             <FlatList
             data={[]}
             renderItem={()=> <Text>Hello</Text>}
             ListEmptyComponent={<EmptyList />}
             />
+
+            <BottomSheet
+            snapPoints={['25%', '50%', '90%']}
+        ref={bottomSheetRef}
+        onChange={handleSheetChanges}
+      >
+        <BottomSheetView style={styles.contentContainer}>
+          <Text>Awesome 🎉</Text>
+        </BottomSheetView>
+            </BottomSheet>
+
       </SafeAreaView>
     </SafeAreaProvider>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'grey',
+    zIndex: 3,
+  },
+  contentContainer: {
+    flex: 1,
+    padding: 36,
+    alignItems: 'center',
+  },
+});
 
 const homeStyles = StyleSheet.create({
     homeHeader : {
@@ -67,13 +100,15 @@ const homeStyles = StyleSheet.create({
     homeHeaderText : {
         fontFamily : "Satoshi-Regular",
         fontSize : 14,
-        letterSpacing : -.5
+        letterSpacing : -.5,
+        color : "#08330F"
     }, 
 
     homeHeaderSmallerText : {
         fontFamily : "Satoshi-Medium",
         fontSize : 16,
         letterSpacing : -.5,
+        color : "#08330F"
     },
 
     calendarTop : {
@@ -112,7 +147,8 @@ const homeStyles = StyleSheet.create({
     calendarBottomText : {
         fontFamily : "Satoshi-Bold",
         fontSize : 18,
-        textAlign : "center"
+        textAlign : "center",
+        color : "#08330F"
     },
 
     calendarShadow: {

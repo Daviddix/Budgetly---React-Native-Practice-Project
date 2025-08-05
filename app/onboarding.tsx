@@ -72,20 +72,20 @@ export const onboardingStyles = StyleSheet.create({
     letterSpacing: -1,
     marginBottom: 10,
     fontFamily: 'Satoshi-Bold',
-    color: '#000',
-    maxWidth : "100%"
+    maxWidth : "100%",
+    color : "#08330F"
   },
   subHeadingStyle: {
     opacity: 0.6,
     textAlign: 'center',
     fontSize: 16,
     fontFamily: 'Satoshi-Medium',
-    color: '#000',
     lineHeight: 22,
-    letterSpacing: -.2
+    letterSpacing: -.2,
+    color : "#08330F"
   },
   buttonStyle: {
-    backgroundColor: '#22C55E',
+    backgroundColor: '#4DFF6B',
     paddingVertical: 18,
     paddingHorizontal: 24,
     borderRadius: 8,
@@ -97,9 +97,8 @@ export const onboardingStyles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
-    color: 'white',
+    color: '#08330F',
     fontSize: 16,
-    fontWeight: '600',
-    fontFamily: 'Satoshi-Medium',
+    fontFamily: 'Satoshi-Bold',
   },
 })

@@ -35,14 +35,16 @@ const emptyListStyles = StyleSheet.create({
     emptyListHeading : {
         fontFamily : "Satoshi-Bold",
         fontSize : 18,
-        letterSpacing : -.5
+        letterSpacing : -.5,
+        color : "#08330F"
     },
     emptyListText : {
         fontSize : 20,
         fontFamily : "Satoshi-Medium",
-        opacity : .6,
+        opacity : .5,
         textAlign : "center",
-        letterSpacing : -.5
+        letterSpacing : -.5,
+        color : "#000"
     },
 
     addButton : {

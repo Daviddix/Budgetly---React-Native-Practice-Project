@@ -7,7 +7,7 @@ export const infoStyles = StyleSheet.create({
     letterSpacing: -1,
     marginBottom: 10,
     fontFamily: 'Satoshi-Bold', 
-    color: '#000',
+    color : "#08330F",
     maxWidth : "100%"
     },
     area: {
@@ -31,7 +31,7 @@ export const infoStyles = StyleSheet.create({
     fontFamily : "Satoshi-Medium"
   },
   buttonStyle: {
-    backgroundColor: '#22C55E',
+    backgroundColor: '#4DFF6B',
     paddingVertical: 18,
     paddingHorizontal: 24, 
     borderRadius: 8,
@@ -45,6 +45,6 @@ export const infoStyles = StyleSheet.create({
   buttonTextStyle : {
     fontFamily: 'Satoshi-Bold',
     fontSize: 16,
-    color: '#000'
+    color : "#08330F"
   }
 })
